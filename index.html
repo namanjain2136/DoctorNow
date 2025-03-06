@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoctorNow - Your Health Companion</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+        header {
+    background: #007bff;
+    color: white;
+    padding: 20px ;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 15px; 
+}
+
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #ffdd57;
+}
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background: #e3f2fd;
+        }
+        .hero h2 {
+            font-size: 2.5rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #e6c852;
+            color:#333;
+        }
+        .stats {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .stat {
+            text-align: center;
+            margin: 0 20px;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 30px;
+        }
+        footer nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        footer nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+        }
+    }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>DoctorNow</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="pharmacy.html">Online Pharmacy</a></li>
+                    <li><a href="appointments.html">Appointments</a></li>
+                    <li><a href="health-records.html">Health Records</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="login.html" class="btn">Login/Sign Up</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Welcome to DoctorNow</h2>
+            <p>Your trusted healthcare companion for a healthier tomorrow.</p>
+            <a href="login.html" class="btn">Get Started</a>
+            <br>
+            <br>
+            <br>
+            <br><br>
+        </div>
+        <div class="stats">
+            <br><br><br>
+            <div class="stat">
+                <h3>10k+</h3>
+                <p>Happy Patients</p>
+            </div>
+            <div class="stat">
+                <h3>50+</h3>
+                <p>Expert Doctors</p>
+            </div>
+            <div class="stat">
+                <h3>24/7</h3>
+                <p>Medical Care</p>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+    </section>
+
+    <footer>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2025 DoctorNow. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

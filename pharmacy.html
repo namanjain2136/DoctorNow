@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Pharmacy - DoctorNow</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        function searchMedicine() {
+            let input = document.getElementById("searchInput").value.toLowerCase();
+            let medicines = document.getElementsByClassName("medicine");
+            
+            for (let i = 0; i < medicines.length; i++) {
+                let name = medicines[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
+                let desc = medicines[i].getElementsByTagName("p")[0].innerText.toLowerCase();
+                
+                if (name.includes(input) || desc.includes(input)) {
+                    medicines[i].style.display = "block";
+                } else {
+                    medicines[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>DoctorNow</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="pharmacy.html">Online Pharmacy</a></li>
+                    <li><a href="appointments.html">Appointments</a></li>
+                    <li><a href="health-records.html">Health Records</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="login.html" class="btn">Login/Sign Up</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="pharmacy">
+        <div class="container">
+            <h2>Online Pharmacy</h2>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search for medicines by name, category, or description..." onkeyup="searchMedicine()">
+            </div>
+            <div class="medicine-list">
+                <div class="medicine"><h3>Paracetamol</h3><p>Pain relief and fever reduction.</p><p class="price">₹500</p><button class="btn">Add to Cart</button></div>
+                <div class="medicine"><h3>Amoxicillin</h3><p>Antibiotic for bacterial infections.</p><p class="price">₹1100</p><button class="btn">Add to Cart</button></div>
+                <div class="medicine"><h3>Ibuprofen</h3><p>Pain relief and anti-inflammatory.</p><p class="price">₹750</p><button class="btn">Add to Cart</button></div>
+                <div class="medicine"><h3>Metformin</h3><p>Medication for type 2 diabetes.</p><p class="price">₹1300</p><button class="btn">Add to Cart</button></div>
+                <div class="medicine"><h3>Diclofenac</h3><p>Pain relief (except abdominal pain).</p><p class="price">₹900</p><button class="btn">Add to Cart</button></div>
+                <div class="medicine"><h3>Azithromycin</h3><p>Antibiotic (Antimicrobial).</p><p class="price">₹1200</p><button class="btn">Add to Cart</button></div>
+                <div class="medicine"><h3>Cefixime</h3><p>Antibiotic (Antimicrobial).</p><p class="price">₹1000</p><button class="btn">Add to Cart</button></div>
+                <div class="medicine"><h3>Ranitidine</h3><p>For stomach aches.</p><p class="price">₹650</p><button class="btn">Add to Cart</button></div>
+                <div class="medicine"><h3>Cimetidine</h3><p>For stomach aches.</p><p class="price">₹600</p><button class="btn">Add to Cart</button></div>
+                <div class="medicine"><h3>Famitidine</h3><p>For stomach aches.</p><p class="price">₹640</p><button class="btn">Add to Cart</button></div>
+                <div class="medicine"><h3>Ome Pra Zole</h3><p>Stomach pain, heartburn, nausea.</p><p class="price">₹850</p><button class="btn">Add to Cart</button></div>
+                <div class="medicine"><h3>Losartan</h3><p>Blood pressure control.</p><p class="price">₹1200</p><button class="btn">Add to Cart</button></div>
+                <div class="medicine"><h3>Aspirin</h3><p>Blood thinner and pain reliever.</p><p class="price">₹400</p><button class="btn">Add to Cart</button></div>
+                <div class="medicine"><h3>Prednisone</h3><p>Anti-inflammatory and immune suppressant.</p><p class="price">₹1400</p><button class="btn">Add to Cart</button></div>
+                <div class="medicine"><h3>Clarithromycin</h3><p>Antibiotic for bacterial infections.</p><p class="price">₹1150</p><button class="btn">Add to Cart</button></div>
+                <div class="medicine"><h3>Levothyroxine</h3><p>Thyroid hormone replacement.</p><p class="price">₹1250</p><button class="btn">Add to Cart</button></div>
+                <div class="medicine"><h3>Hydrochlorothiazide</h3><p>Diuretic for blood pressure control.</p><p class="price">₹750</p><button class="btn">Add to Cart</button></div>
+                <div class="medicine"><h3>Simvastatin</h3><p>Cholesterol-lowering medication.</p><p class="price">₹900</p><button class="btn">Add to Cart</button></div>
+                <div class="medicine"><h3>Metoprolol</h3><p>Beta-blocker for heart conditions.</p><p class="price">₹850</p><button class="btn">Add to Cart</button></div>
+                <div class="medicine"><h3>Atorvastatin</h3><p>Cholesterol-lowering medication.</p><p class="price">₹1000</p><button class="btn">Add to Cart</button></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2025 DoctorNow. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoctorNow - Appointments</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            transition: background 0.3s, color 0.3s;
+        
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .appointments {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        select, button {
+            width: 50%; /* Adjusted width for dropdown */
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .doctor-info {
+            display: none;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .doctor-details {
+            margin-bottom: 10px; /* Space between doctor details */
+        }
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            transition: background 0.3s;
+        }
+        footer p {
+            margin: 0;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>DoctorNow</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="pharmacy.html">Online Pharmacy</a></li>
+                    <li><a href="appointments.html">Appointments</a></li>
+                    <li><a href="health-records.html">Health Records</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="login.html" class="btn">Login/Sign Up</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="appointments">
+        <div class="container">
+            <h2>Book an Appointment</h2>
+            <form id="appointment-form">
+                <label for="doctor">Choose a Doctor:</label>
+                <select id="doctor" onchange="showDoctorInfo()">
+                    <option value="">Select a doctor</option>
+                    <option value="dr_smith">Dr. Smith</option>
+                    <option value="dr_gupta">Dr. Gupta</option>
+                    <option value="dr_rao">Dr. Rao</option>
+                    <option value="dr_jones">Dr. Jones</option>
+                    <option value="dr_khan">Dr. Khan</option>
+                    <option value="dr_lee"> Dr. Lee</option>
+                    <option value="dr_patel">Dr. Patel</option>
+                    <option value="dr_miller">Dr. Miller</option>
+                    <option value="dr_brown">Dr. Brown</option>
+                    <option value="dr_wilson">Dr. Wilson</option>
+                    <option value="dr_davis">Dr. Davis</option>
+                </select>
+                <div id="doctor-info" class="doctor-info">
+                    <div id="dr_smith" class="doctor-details">
+                        <h3>Dr. Smith</h3>
+                        <p>Specialization: Cardiologist</p>
+                        <p>Experience: 10 years</p>
+                    </div>
+                    <div id="dr_gupta" class="doctor-details">
+                        <h3>Dr. Gupta</h3>
+                        <p>Specialization: Dermatologist</p>
+                        <p>Experience: 8 years</p>
+                    </div>
+                    <div id="dr_rao" class="doctor-details">
+                        <h3>Dr. Rao</h3>
+                        <p>Specialization: Pediatrician</p>
+                        <p>Experience: 5 years</p>
+                    </div>
+                    <div id="dr_jones" class="doctor-details">
+                        <h3>Dr. Jones</h3>
+                        <p>Specialization: Gynecologist</p>
+                        <p>Experience: 7 years</p>
+                    </div>
+                    <div id="dr_khan" class="doctor-details">
+                        <h3>Dr. Khan</h3>
+                        <p>Specialization: Orthopedic Surgeon</p>
+                        <p>Experience: 12 years</p>
+                    </div>
+                    <div id="dr_lee" class="doctor-details">
+                        <h3>Dr. Lee</h3>
+                        <p>Specialization: ENT Specialist</p>
+                        <p>Experience: 6 years</p>
+                    </div>
+                    <div id="dr_patel" class="doctor-details">
+                        <h3>Dr. Patel</h3>
+                        <p>Specialization: Dentist</p>
+                        <p>Experience: 9 years</p>
+                    </div>
+                    <div id="dr_miller" class="doctor-details">
+                        <h3>Dr. Miller</h3>
+                        <p>Specialization: MBBS</p>
+                        <p>Experience: 15 years</p>
+                    </div>
+                    <div id="dr_brown" class="doctor-details">
+                        <h3>Dr. Brown</h3>
+                        <p>Specialization: Endocrinologist</p>
+                        <p>Experience: 11 years</p>
+                    </div>
+                    <div id="dr_wilson" class="doctor-details">
+                        <h3>Dr. Wilson</h3>
+                        <p>Specialization: Gastroenterologist</p>
+                        <p>Experience: 9 years</p>
+                    </div>
+                    <div id="dr_davis" class="doctor-details">
+                        <h3>Dr. Davis</h3>
+                        <p>Specialization: Neurologist</p>
+                        <p>Experience: 10 years</p>
+                    </div>
+                </div>
+                <label for="timeslot">Available Time Slots:</label>
+                <select id="timeslot"></select>
+                <div id="doctor-specifications" class="doctor-specifications" style="display:none;">
+                    <p id="specification"></p>
+                </div>
+                <button type="submit" class="btn">Book Now</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2025 DoctorNow. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function showDoctorInfo() {
+            const doctorSelect = document.getElementById('doctor');
+            const doctorInfo = document.getElementById('doctor-info');
+            const selectedDoctor = doctorSelect.value;
+            const specification = document.getElementById('specification');
+            const doctorSpecifications = document.getElementById('doctor-specifications');
+
+            // Hide all doctor details
+            const doctorDetails = doctorInfo.getElementsByClassName('doctor-details');
+            for (let detail of doctorDetails) {
+                detail.style.display = 'none';
+            }
+
+            // Show selected doctor details
+            if (selectedDoctor ) {
+                document.getElementById(selectedDoctor).style.display = 'block';
+                const specialization = document.querySelector(`#${selectedDoctor} p:nth-of-type(1)`).innerText;
+                const experience = document.querySelector(`#${selectedDoctor} p:nth-of-type(2)`).innerText;
+                specification.innerText = `${specialization} | ${experience}`;
+                doctorSpecifications.style.display = 'block';
+                populateTimeSlots(selectedDoctor);
+            } else {
+                doctorSpecifications.style.display = 'none';
+            }
+        }
+
+        function populateTimeSlots(doctor) {
+            const timeslotSelect = document.getElementById('timeslot');
+            timeslotSelect.innerHTML = ''; // Clear previous options
+
+            const timeSlots = {
+                dr_smith: ['10:00 AM', '11:00 AM', '1:00 PM'],
+                dr_gupta: ['9:00 AM', '12:00 PM', '3:00 PM'],
+                dr_rao: ['10:30 AM', '1:30 PM', '4:00 PM'],
+                dr_jones: ['11:00 AM', '2:00 PM', '5:00 PM'],
+                dr_khan: ['9:30 AM', '12:30 PM', '3:30 PM'],
+                dr_lee: ['10:00 AM', '1:00 PM', '4:00 PM'],
+                dr_patel: ['11:30 AM', '2:30 PM', '5:30 PM'],
+                dr_miller: ['9:00 AM', '12:00 PM', '3:00 PM'],
+                dr_brown: ['10:00 AM', '1:00 PM', '4:00 PM'],
+                dr_wilson: ['11:00 AM', '2:00 PM', '5:00 PM'],
+                dr_davis: ['10:30 AM', '1:30 PM', '4:30 PM'],
+            };
+
+            const slots = timeSlots[doctor] || [];
+            slots.forEach(slot => {
+                const option = document.createElement('option');
+                option.value = slot;
+                option.textContent = slot;
+                timeslotSelect.appendChild(option);
+            });
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-theme');
+            document.querySelector('header').classList.toggle('dark-theme');
+            document.querySelector('footer').classList.toggle('dark-theme');
+        }
+    </script>
+</body>
+</html>
