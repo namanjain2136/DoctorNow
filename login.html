@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Doctors Now</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #007BFF;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        h1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #333;
+            gap: 10px;
+        }
+        h1 svg {
+            width: 30px;
+            height: 30px;
+            fill: #007BFF;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 12px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            color: #333;
+            background-color: #fff;
+            box-sizing: border-box;
+        }
+        .password-container {
+            position: relative;
+        }
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #333;
+        }
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #007BFF;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        p {
+            text-align: center;
+            margin: 10px 0;
+            color: #333;
+        }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm4 0h-2v-6h2v6zm1-10h-8V7h8v1z"/>
+            </svg>
+            DoctorNow
+        </h1>
+        <h2>Login to Your Account</h2>
+        <form id="login-form">
+            <input type="email" id="email" placeholder="Email" required>
+            <div class="password-container">
+                <input type="password" id="password" placeholder="Password" required>
+                <span class="toggle-password" onclick="togglePassword()">👁️</span>
+            </div>
+            <button type="submit" class="btn">Login</button>
+            <p><a href="#">Forgot Password?</a></p>
+            <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+        </form>
+    </div>
+
+    <script>
+        function togglePassword() {
+            const passwordField = document.getElementById('password');
+            passwordField.type = passwordField.type === 'password' ? 'text' : 'password';
+        }
+
+        // Email Validation Function
+        function validateEmail() {
+            const email = document.getElementById('email').value;
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            return emailPattern.test(email);
+        }
+
+        // Form Submission with Email Validation
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            if (!validateEmail()) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
